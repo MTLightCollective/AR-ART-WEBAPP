@@ -1,8 +1,8 @@
 #exit-button {
-    position: absolute;
+    /* position: absolute;
     top: 20px;
-    right: 20px;
-    z-index: 9999;
+    right: 20px; */
+    /* z-index: 9999; */
     background-color: #fff;
     color: #000;
     border-radius: 50%;
@@ -14,10 +14,10 @@
     cursor: pointer;
   }
 #play-button {
-    position: absolute;
+    /* position: absolute;
     bottom: 20px;
-    left: 50%;
-    z-index: 9999;
+    left: 50%; */
+    /* z-index: 9999; */
     background-color: #fff;
     color: #000;
     border-radius: 50%;
