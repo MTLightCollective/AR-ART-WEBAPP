@@ -22,8 +22,8 @@ AFRAME.registerComponent('play-button', {
 
     clickEvent: function () {
         console.log("start video");
-        this.videoPlaneEl.setAttribute('visible', true);
         this.videoEl.play();
+        this.videoPlaneEl.setAttribute('visible', true);
         this.el.setAttribute('visible', false); // Hide the button
     },
 
