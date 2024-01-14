@@ -25,7 +25,6 @@
           src="assets/video.mp4"
           preload="auto"
           id="penseurvideo"
-          loop="true"
           muted="false"
           webkit-playsinline
           playsinline
@@ -37,6 +36,8 @@
 
       <a-entity id="target" mindar-image-target="targetIndex: 0">
         <a-plane
+          id="video-plane"
+          visible="false"
           material="shader: chromakey; src: #penseurvideo; color: 1 1 0.03"
           position="0 0 0"
           height="1"
