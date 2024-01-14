@@ -1,83 +1,30 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial scale=1" />
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
-    <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <!-- <script src="./src/buttons.js"></script> -->
-    <script src="./src/play-button-component.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTLight Web App</title>
     <link rel="stylesheet" href="./styles.css" />
-  </head>
-
-  <body>
-    <a-scene
-      mindar-image="imageTargetSrc: ./assets/penseur98.mind; uiError:no; uiLoading:no; uiScanning:no"
-      device-orientation-permission-ui="enabled: false"
-      vr-mode-ui="enabled: false"
-    >      
-      <a-assets>
-        <video
-          src="assets/video.mp4"
-          preload="auto"
-          id="penseurvideo"
-          muted="false"
-          webkit-playsinline
-          playsinline
-          controls
-        ></video>
-      </a-assets>
-
-      <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse:false; rayOrigin:mouse" raycaster="far: ${customFields.libVersion}; objects: .interactable"></a-camera>
-
-      <a-entity id="target" mindar-image-target="targetIndex: 0">
-        <a-plane
-          id="video-plane"
-          visible="false"
-          material="shader: chromakey; src: #penseurvideo; color: 1 1 0.03"
-          position="0 0 0"
-          height="1"
-          width="1"
-          rotation="0 0 0"
-          scale="2 2 1"
-        ></a-plane>
-
-        <!-- buttons -->
-        <a-plane
-          id="playButton3D"
-          class="interactable"
-          position="0 0 0.5"
-          rotation="0 0 0"
-          width="1"
-          height="0.5"
-          color="#FF0000"
-          play-button
-          animation__mouseenter="property:scale; to: 1.2 1.2 1; dur: 100; startEvents: mouseenter; easing: easeInCubic"
-          animation__mouseleave="property: scale; to: 1 1 1 ; dur: 100; startEvents: mouseleave; easing: easeInCubic"
-          animation__click="property: scale; to: 1.1 1.1 1; dur: 100; startEvents: click; easing: easeInCubic"
-          animation__click2="property: scale; to: 1.2 1.2 1; dur: 100; startEvents: animationcomplete__click; easing: easeInCubic"
-        >
-          <a-text
-            id="buttontext"
-            value="Play"
-            align="center"
-            color="#FFFFFF"
-            position="0 0 0.01"
-          ></a-text>
-        </a-plane>
-      </a-entity>
-    </a-scene>
-    <!-- <div style="position: absolute; z-index: 1000; top:0">
-      <button id="play-button"><i class="fas fa-play"></i></button>
-      <button id="example-pause-button">Pause</button>
-      <button id="example-pause-keep-video-button">Pause (keep video)</button>
-      <button id="example-unpause-button">UnPause</button>
-      <button id="exit-button"><i class="fas fa-times-circle"></i></button>
-    </div> -->
-
-  </body>
+    
+</head>
+<body class="body">
+    <div id="logoBlock-lp">
+        <img src="./assets/Logo_MTLight.png" id="logo-lp">
+    </div>
+    <div id="buttonBlock-lp">
+        <button id="ar-button" class="btn">
+            <img src="./assets/ar_icon.svg" alt="AR Icon" class="icon">
+            <span class="text">AR</span>
+        </button>
+        <button id="map-button" class="btn">
+            <img src="./assets/map_icon.svg" alt="Map Icon" class="icon">
+            <span class="text">Map</span>
+        </button>
+        <button id="info-button" class="btn">
+            <img src="./assets/info_icon.svg" alt="AR Icon" class="icon">
+            <span class="text">Info</span>
+        </button>
+    </div>
+    <script src="./src/buttons-lp.js"></script>
+</body>
 </html>

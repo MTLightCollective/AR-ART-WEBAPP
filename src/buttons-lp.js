@@ -1,6 +1,6 @@
 // Event listener for the AR button
 document.getElementById('ar-button').addEventListener('click', function() {
-    window.location.href = 'index.html' ;
+    window.location.href = 'ARexperience.html' ;
   });
   
   // Event listener for the Map button
