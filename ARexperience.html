@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial scale=1" />
-    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     <script src="https://unpkg.com/aframe-chromakey-material/dist/aframe-chromakey-material.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -16,7 +17,7 @@
 
   <body>
     <a-scene
-      mindar-image="imageTargetSrc: ./assets/penseur98.mind; uiError:no; uiLoading:no; uiScanning:no"
+      mindar-image="imageTargetSrc: ./assets/doubletargets.mind; uiError:no; uiLoading:no; uiScanning:no"
       device-orientation-permission-ui="enabled: false"
       vr-mode-ui="enabled: false"
     >      
@@ -25,6 +26,15 @@
           src="assets/video.mp4"
           preload="auto"
           id="penseurvideo"
+          muted="false"
+          webkit-playsinline
+          playsinline
+          controls
+        ></video>
+        <video
+          src="assets/samuraiVideo.mp4"
+          preload="auto"
+          id="samuraivideo"
           muted="false"
           webkit-playsinline
           playsinline
@@ -44,6 +54,43 @@
           width="1"
           rotation="0 0 0"
           scale="2 2 1"
+        ></a-plane>
+
+        <!-- buttons -->
+        <a-plane
+          id="playButton3D"
+          class="interactable"
+          position="0 0 0.5"
+          rotation="0 0 0"
+          width="0.6"
+          height="0.4"
+          color="#FF0000"
+          play-button
+          animation__mouseenter="property:scale; to: 1.2 1.2 1; dur: 100; startEvents: mouseenter; easing: easeInCubic"
+          animation__mouseleave="property: scale; to: 1 1 1 ; dur: 100; startEvents: mouseleave; easing: easeInCubic"
+          animation__click="property: scale; to: 1.1 1.1 1; dur: 100; startEvents: click; easing: easeInCubic"
+          animation__click2="property: scale; to: 1.2 1.2 1; dur: 100; startEvents: animationcomplete__click; easing: easeInCubic"
+        >
+          <a-text
+            id="buttontext"
+            value="▶ Play"
+            align="center"
+            color="#FFFFFF"
+            position="0 0 0.01"
+          ></a-text>
+        </a-plane>
+      </a-entity>
+
+      <a-entity id="target2" mindar-image-target="targetIndex: 1">
+        <a-plane
+          id="samurai-plane"
+          visible="false"
+          material="shader: chromakey; src: #samuraivideo; color: 0 0 0"
+          position="0 0 0"
+          height="1"
+          width="1"
+          rotation="0 0 0"
+          scale="1.5 1.5 1"
         ></a-plane>
 
         <!-- buttons -->
