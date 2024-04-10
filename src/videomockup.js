@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 	navigator.mediaDevices.getUserMedia = () => {
 		return new Promise((resolve, reject) => {
-			const source = "../assets/samurai.jpg";
+			const source = "../assets/MOV_0679.mp4";
 			format = source.split(".").pop();
-
 			if (format === "mp4") {
 				const video = document.createElement("video");
-				video.setAttribute("src", "../assets/MOV_0680.mp4");
+				video.setAttribute("src", source);
 				video.setAttribute("autoplay", "");
 				video.setAttribute("loop", "");
 				video.muted = true;

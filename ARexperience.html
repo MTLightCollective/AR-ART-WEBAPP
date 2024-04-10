@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width" />
-		<!-- 
+		<!-- -->
 		<script src="./src/videomockup.js"></script>
 		<!-- -->
 		<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
@@ -23,6 +23,7 @@
 			mindar-image="imageTargetSrc: ./assets/doubletargets.mind; uiError:no; uiLoading:no; uiScanning:no"
 			device-orientation-permission-ui="enabled: false"
 			vr-mode-ui="enabled: false"
+			stats
 		>
 			<a-assets>
 				<video
@@ -73,7 +74,7 @@
 					width="0.6"
 					height="0.4"
 					color="#FF0000"
-					play-button
+					play-button="videoId: penseurvideo; planeId: video-plane; startupTime:5"
 					animation__mouseenter="property:scale; to: 1.2 1.2 1; dur: 100; startEvents: mouseenter; easing: easeInCubic"
 					animation__mouseleave="property: scale; to: 1 1 1 ; dur: 100; startEvents: mouseleave; easing: easeInCubic"
 					animation__click="property: scale; to: 1.1 1.1 1; dur: 100; startEvents: click; easing: easeInCubic"
@@ -110,7 +111,7 @@
 					width="0.6"
 					height="0.4"
 					color="#FF0000"
-					play-button
+					play-button="videoId: samuraivideo;planeId: samurai-plane"
 					animation__mouseenter="property:scale; to: 1.2 1.2 1; dur: 100; startEvents: mouseenter; easing: easeInCubic"
 					animation__mouseleave="property: scale; to: 1 1 1 ; dur: 100; startEvents: mouseleave; easing: easeInCubic"
 					animation__click="property: scale; to: 1.1 1.1 1; dur: 100; startEvents: click; easing: easeInCubic"
